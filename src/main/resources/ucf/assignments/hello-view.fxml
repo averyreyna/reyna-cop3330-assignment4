@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.2" fx:controller="ucf.assignments.ApplicationController">
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+    </padding>
+    <Label alignment="TOP_CENTER" text="Welcome! What do you want to get done today?" textAlignment="CENTER">
+            <font>
+                <Font size = "15.0"/>
+            </font></Label>
+
+    <Label fx:id="welcomeText" />
+    <ButtonBar>
+        <buttons>
+            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#onHelloButtonClick" text="Create a To-Do List" textAlignment="CENTER"/>
+            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#onHelloButtonClick" text="Delete a To-Do List" textAlignment="CENTER"/>
+            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#onHelloButtonClick" text="Save a To-Do List" textAlignment="CENTER"/>
+            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#onHelloButtonClick" text="Delete a To-Do List" textAlignment="CENTER"/>
+        </buttons>
+    </ButtonBar>
+</VBox>
