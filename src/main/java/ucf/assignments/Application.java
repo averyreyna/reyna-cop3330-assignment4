@@ -1,22 +1,65 @@
 package ucf.assignments;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import java.util.Objects;
 
-import java.io.IOException;
-
-public class Application extends javafx.application.Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Application.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
-        stage.setScene(scene);
-        stage.show();
+public class Application extends javafx.application.Application
+{
+    public static void main(String[] args)
+    {
+        launch();
     }
 
-    public static void main(String[] args) {
-        launch();
+    /*public static class ItemDetails
+    {
+        // initialize variable
+        private String dueDate;
+        private String itemDescription;
+        private Integer completionFlag;
+
+        public String getDueDate()
+        {
+            return dueDate;
+        }
+
+        public void setDueDate(String newDueDate)
+        {
+            this.dueDate = newDueDate;
+        }
+
+        public String getItemDescription()
+        {
+            return itemDescription;
+        }
+
+        public void setItemDescription(String newItemDescription)
+        {
+            this.itemDescription = newItemDescription;
+        }
+
+        public Integer getCompletionFlag()
+        {
+            return completionFlag;
+        }
+
+        public void setCompletionFlag(Integer changedCompletionFlag)
+        {
+            this.completionFlag = changedCompletionFlag;
+        }
+    }*/
+
+    @Override
+    public void start(Stage stage) throws Exception
+    {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("hello-view.fxml")));
+
+        Scene scene = new Scene(root);
+
+        stage.setTitle("To-Do App");
+        stage.setScene(scene);
+        stage.show();
     }
 }
