@@ -7,8 +7,17 @@ package ucf.assignments;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.Objects;
+
+import javafx.stage.Stage;
 import ucf.assignments.Application.*;
 
 public class ApplicationController
@@ -98,7 +107,7 @@ public class ApplicationController
             i++;
             Integer completionFlag = entry.getValue().getItemCompletionFlag();
 
-            if(completionFlag == 1)
+            if (completionFlag == 1)
             {
                 completedItemsList.set(i, innerMap.getOrDefault(entry.getKey(), itemDetails));
             }
@@ -118,7 +127,7 @@ public class ApplicationController
             i++;
             Integer completionFlag = entry.getValue().getItemCompletionFlag();
 
-            if(completionFlag == 0)
+            if (completionFlag == 0)
             {
                 completedItemsList.set(i, innerMap.getOrDefault(entry.getKey(), itemDetails));
             }
@@ -139,6 +148,9 @@ public class ApplicationController
     @FXML
     private Label welcomeText;
 
+    // here is the beginning of the interactions/messages that pop up when a user interacts with a button
+    // since there is no real functionality with the to-list yet, these are placeholders for what the user will actually see once the program is ready
+
     @FXML
     protected void onHelloButtonClick()
     {
@@ -155,19 +167,25 @@ public class ApplicationController
         welcomeText.setText("Edit list!");
     }
 
-    public void onMakeItemClick(ActionEvent actionEvent)
+    @FXML
+    protected void onMakeListClick (ActionEvent event) throws IOException
     {
-        welcomeText.setText("Make item!");
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CreateToDoList.fxml")));
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void onDeleteItemClick(ActionEvent actionEvent)
     {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        welcomeText.setText("Delete item!");
     }
 
     public void onViewCompletedItemsClick(ActionEvent actionEvent)
     {
-        welcomeText.setText("Delete item!");
+        welcomeText.setText("Completed items!");
     }
 
     public void onViewUncompletedItemsClick(ActionEvent actionEvent)

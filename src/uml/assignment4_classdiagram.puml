@@ -12,14 +12,14 @@ class addItem
     completionFlag : Integer
     itemDetails.setDueDate(dueDate)
     itemDetails.setItemDescription(itemDescription)
-    itemDetails.setCompletionFlag(completionFlag);
-    innerMap.put(itemTitle, itemDetails);
+    itemDetails.setCompletionFlag(completionFlag)
+    innerMap.put(itemTitle, itemDetails)
 }
 
 class removeToDoList
 {
     itemDetails : ItemDetails
-    innerMap.remove(itemTitle, itemDetails);
+    innerMap.remove(itemTitle, itemDetails)
 }
 
 class removeItem
@@ -32,7 +32,7 @@ class editItemDueDate
 {
     itemDetails : ItemDetails
     itemDetails.setDueDate(dueDate)
-    innerMap.put(itemTitle, itemDetails);
+    innerMap.put(itemTitle, itemDetails)
 }
 
 class editItemDescription
