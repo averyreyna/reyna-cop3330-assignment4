@@ -51,4 +51,32 @@ class editItemCompletionStatus
     innerMap.put(itemTitle, itemDetails)
 }
 
+class createCompletedItemsList
+{
+    completedItemsList : ArrayList<ItemDetails>
+    itemDetails : ItemDetails
+    i : Integer
+    innerMap.entrySet()
+    entry.getValue().getItemCompletionFlag()
+    completedItemsList.set(i, innerMap.getOrDefault(entry.getKey(), itemDetails))
+}
+
+
+class createUncompletedItemsList
+{
+    completedItemsList : ArrayList<ItemDetails>
+    itemDetails : ItemDetails
+    i : Integer
+    innerMap.entrySet()
+    entry.getValue().getItemCompletionFlag()
+    completedItemsList.set(i, innerMap.getOrDefault(entry.getKey(), itemDetails))
+}
+
+class editToDoListTitle
+{
+    copyOfItems : HashMap<String, ItemDetails>
+    outerMap.remove(oldToDoListTitle)
+    outerMap.put(newToDoListTitle, copyOfItems)
+}
+
 @enduml
