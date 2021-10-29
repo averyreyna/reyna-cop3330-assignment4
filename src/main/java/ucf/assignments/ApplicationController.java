@@ -12,11 +12,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-
 import java.io.IOException;
+import java.util.EventObject;
 import java.util.HashMap;
 import java.util.Objects;
-
 import javafx.stage.Stage;
 import ucf.assignments.Application.*;
 
@@ -47,12 +46,19 @@ public class ApplicationController
         return innerMap;
     }
 
+    // create a function "removeToDoList" that takes in the outerHashMap, innerHashMap, and the to-do list the user wants to delete
+    // within it use the .remove() method to remove the to-do list title and its inner map to fully remove a to-do list
+    // once that is done, return the outerMap HashMap so the user can see the updated to-do list
     public static HashMap<String, HashMap<String, Application.ItemDetails>> removeToDoList(HashMap<String, HashMap<String, Application.ItemDetails>> outerMap, HashMap<String, Application.ItemDetails> innerMap)
     {
         outerMap.remove(toDoListTitle, innerMap);
         return outerMap;
     }
 
+    // create a function "removeItem" that takes in the innerHashMap and the desired item the user wants to delete
+    // within it, create a new variable "itemDetails" that has a data type of ItemDetails
+    // after that, use the .remove() method in order to remove the item title and details of the item
+    // once that is done, return the innerMap HashMap so the user can see the updated to-list
     public static HashMap<String, Application.ItemDetails> removeItem(HashMap<String, Application.ItemDetails> innerMap)
     {
         ItemDetails itemDetails = new ItemDetails();
@@ -145,11 +151,11 @@ public class ApplicationController
     
     */
 
+    // this is the beginning of the interactivity between the different fxml files that make-up the desktop app
+    // when you click a certain button, then it will bring you to another screen that is another feature of the to-do list
+    // this interactivity is achieved by replacing the onAction parameter with the appropriate function found below
     @FXML
     private Label welcomeText;
-
-    // here is the beginning of the interactions/messages that pop up when a user interacts with a button
-    // since there is no real functionality with the to-list yet, these are placeholders for what the user will actually see once the program is ready
 
     @FXML
     protected void onHelloButtonClick()
@@ -157,18 +163,30 @@ public class ApplicationController
         welcomeText.setText("Hello!");
     }
 
-    public void onBackToHomeClick(ActionEvent actionEvent)
+    // this creates functionality to bring the user to the "welcome back!" screen
+    public void onBackToHomeClick(ActionEvent event) throws IOException
     {
-        welcomeText.setText("Welcome back home!");
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("WelcomeScreen.fxml")));
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
-    public void onEditListClick(ActionEvent actionEvent)
+    public void onEditListClick(ActionEvent event) throws IOException
     {
-        welcomeText.setText("Edit list!");
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("EditToDoList.fxml")));
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
+    // this creates functionality to bring the user to the "create a to-do list" screen
     @FXML
-    protected void onMakeListClick (ActionEvent event) throws IOException
+    protected void onMakeListClick(ActionEvent event) throws IOException
     {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CreateToDoList.fxml")));
         Scene scene = new Scene(root);
@@ -193,9 +211,14 @@ public class ApplicationController
         welcomeText.setText("Uncompleted items!");
     }
 
-    public void onSubmitListClick(ActionEvent actionEvent)
+    public void onSubmitListClick(ActionEvent event) throws IOException
     {
-        welcomeText.setText("Submit to-do list!");
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("YourToDoList.fxml")));
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void onSubmitItemClick(ActionEvent actionEvent)
@@ -216,5 +239,15 @@ public class ApplicationController
     public void onBackToItemClick(ActionEvent actionEvent)
     {
         welcomeText.setText("Go back to item!");
+    }
+
+    public void onMakeItemClick(ActionEvent event) throws IOException
+    {
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CreateItem.fxml")));
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 }

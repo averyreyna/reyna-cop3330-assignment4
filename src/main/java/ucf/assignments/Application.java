@@ -77,6 +77,7 @@ public class Application extends javafx.application.Application
 
     */
 
+    // here is the start() function that starts gradle, so you can see the UI and use your to-do list
     @Override
     public void start(Stage stage) throws Exception
     {

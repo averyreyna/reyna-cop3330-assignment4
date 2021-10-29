@@ -61,7 +61,6 @@ class createCompletedItemsList
     completedItemsList.set(i, innerMap.getOrDefault(entry.getKey(), itemDetails))
 }
 
-
 class createUncompletedItemsList
 {
     completedItemsList : ArrayList<ItemDetails>

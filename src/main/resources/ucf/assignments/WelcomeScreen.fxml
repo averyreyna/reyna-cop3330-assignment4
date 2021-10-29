@@ -31,7 +31,6 @@
             <Button alignment="CENTER" contentDisplay="CENTER" onAction="#onMakeListClick" text="Create a To-Do List" textAlignment="CENTER"/>
             <Button alignment="CENTER" contentDisplay="CENTER" onAction="#onHelloButtonClick" text="Delete a To-Do List" textAlignment="CENTER"/>
             <Button alignment="CENTER" contentDisplay="CENTER" onAction="#onHelloButtonClick" text="Save a To-Do List" textAlignment="CENTER"/>
-            <Button alignment="CENTER" contentDisplay="CENTER" onAction="#onHelloButtonClick" text="Delete a To-Do List" textAlignment="CENTER"/>
         </buttons>
     </ButtonBar>
 </VBox>
