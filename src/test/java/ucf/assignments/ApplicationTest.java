@@ -46,8 +46,16 @@ class ApplicationTest
                     // stop case
                 // case 13: markCompleteTest
                     // stop case
+                // case 17: saveSingleToDoListItemsTest
+                    // stop case
+                // case 18: saveAllToDoListItemsTest
+                    // stop case
+                // case 19: loadSingleToDoListItemsTest
+                    // stop case
+                // case 20: loadAllToDoListItemsTest
+                    // stop case
 
-    // create an addToDoListTest function that takes in testOuterHashMap, testInnerHashMap, and testToDoListTitle as its parameters
+    // create an "addToDoListTest" function that takes in testOuterHashMap, testInnerHashMap, and testToDoListTitle as its parameters
         // function call addToDoList with testToDoListTitle, testOuterHashMap, and testInnerHashMap in its parameters, returning the testOuterHashMap
         // use a single for loop that iterates through the length of the testOuterHashMap
             // assertTrue if current index of testOuterHashMap collection is null
@@ -55,19 +63,19 @@ class ApplicationTest
 
         // end addToDoListTest
 
-    // create a removeExistingToDoListTest function that takes in testOuterHashMap, testInnerHashMap, and testToDoListTitle as its parameters
+    // create a "removeExistingToDoListTest" function that takes in testOuterHashMap, testInnerHashMap, and testToDoListTitle as its parameters
         // function call removeToDoList with testToDoListTitle, testOuterHashMap, and testInnerHashMap in its parameters, returning the testOuterHashMap
         // assertTrue if testOuterHashMap<testToDoList, testInnerHashMap> is not null
 
         // end removeExistingToDoListTest
 
-    // create an editToDoListTest function that takes in testOuterHashMap, testInnerHashMap, and testToDoListTitle as its parameters
+    // create an "editToDoListTest" function that takes in testOuterHashMap, testInnerHashMap, and testToDoListTitle as its parameters
         // function call editToDoList with testToDoListTitle, testOuterHashMap, and testInnerHashMap in its parameters, returning the testOuterHashMap
         // assertTrue if testOuterHashMap<testToDoList, testInnerHashMap> is not null
 
         // end editToDoListTest
 
-    // create an addNewItemTest function that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+    // create an "addNewItemTest" function that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
         // function call addNewItem with testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription, returning the testInnerHashMap
         // use a single for loop that iterates through the length of the testInnerHashMap
             // assertTrue if current index of testInnerHashMap collection is null
@@ -75,27 +83,55 @@ class ApplicationTest
 
         // end addNewItemTest
 
-    // create a removeItemTest function that takes in testInnerHashMap and testItemTitle as its parameters
+    // create a "removeItemTest" function that takes in testInnerHashMap and testItemTitle as its parameters
         // function call removeItem with testItemTitle and testInnerHashMap in its parameters, returning the testInnerHashMap
         // assertTrue if testInnerHashMap<testItemTitle, ItemDetails> is not null
 
         // end removeItemTest
 
-    // create an editDescriptionTest function that takes in testInnerHashMap, testItemTitle, and testItemDescription as its parameters
+    // create an "editDescriptionTest" function that takes in testInnerHashMap, testItemTitle, and testItemDescription as its parameters
         // function call editDescription with testItemTitle testInnerHashMap, testItemTitle, and testItemDescription as its parameters, returning the testInnerHashMap
         // assertTrue if testInnerHashMap<testItemTitle, ItemDetails.get(itemDescription)> equals testItemDescription
 
         // end editDescriptionTest
 
-    // create an editDueDateTest function that takes in testInnerHashMap, testItemTitle, and testDueDate as its parameters
+    // create an "editDueDateTest" function that takes in testInnerHashMap, testItemTitle, and testDueDate as its parameters
         // function call editDueDate with testItemTitle testInnerHashMap, testItemTitle, and testDueDate as its parameters, returning the testInnerHashMap
         // assertTrue if testInnerHashMap<testItemTitle, ItemDetails.get(dueDate)> equals testDueDate
 
         // end editDueDateTest
 
-    // create a markCompleteTest that takes in testInnerHashMap and testItemTitle as its parameters
-        // function call editItemCompletionStatus with testInnerHashMap and testItemTitle as its parameters, return testInnerHashMap
+    // create a "markCompleteTest" that takes in the testInnerHashMap and testItemTitle as its parameters
+        // function call editItemCompletionStatus with testInnerHashMap and testItemTitle as its parameters, returning testInnerHashMap
         // assertTrue if testInnerHashMap<testItemTitle, ItemDetails.get(completionFlag)> equals testItemFlag
 
         // end markCompleteTest
+
+    // create a "saveSingleToDoListItemsTest" that takes in the testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // function call saveSingleToDoListItems that takes in the testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+            // use a single for loop that iterates through the length of the testInnerHashMap and puts the items into external storage
+            // assertTrue if the external file contains all the items of a single to-do list
+
+        // end saveSingleToDoListItemsTest
+
+    // create a "saveAllToDoListItemsTest" function that takes in the testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // function call saveAllToDoListItems that takes in the  testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+            // use a nested for loop that iterates through length of both the testOuterHashMap and testInnerHashMap and puts the items into external storage
+            // assertTrue if the external file contains all the items across all the to-do lists
+
+        // end saveAllToDoListItemsTest
+
+    // create a "loadSingleToDoListItemsTest" function that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // function call loadSingleToDoListItems that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+            // use a for loop that iterates through the external file to check if every item of the to-do list you want is present
+            // assertTrue if the external file contains all the items of a single to-do list
+
+        // end loadSingleToDoListItemsTest
+
+    // create a "loadAllToDoListItemsTest" function that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // function call loadAllToDoListItems that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+            // use a for loop that iterates through the external file to check if every item of the to-do list you want is present
+            // assertTrue if the external file contains all the items across all the to-do lists
+
+        // end loadAllToDoListItemsTest
 }

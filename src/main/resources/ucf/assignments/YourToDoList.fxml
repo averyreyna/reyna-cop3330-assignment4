@@ -5,6 +5,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
@@ -47,5 +49,16 @@
     </GridPane>
 
     <Label fx:id="buttonResponses" />
+   <BorderPane prefHeight="185.0" prefWidth="731.0">
+      <bottom>
+         <Slider BorderPane.alignment="CENTER" />
+      </bottom>
+      <center>
+         <Label text="Both incompleted and completed to-do lists will be put side-by-side here up to a certain cap" BorderPane.alignment="CENTER" />
+      </center>
+      <top>
+         <Label text="Will display all active to do lists here!" BorderPane.alignment="CENTER" />
+      </top>
+   </BorderPane>
     <ButtonBar buttonMinWidth="100.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="580.0" />
 </VBox>
