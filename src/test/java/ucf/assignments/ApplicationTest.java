@@ -46,6 +46,12 @@ class ApplicationTest
                     // stop case
                 // case 13: markCompleteTest
                     // stop case
+                // case 14: displayExistingItemsTest
+                    // stop case
+                // case 15: displayIncompletedItemsTest
+                    // stop case
+                // case 16: displayCompletedItemsTest
+                    // stop case
                 // case 17: saveSingleToDoListItemsTest
                     // stop case
                 // case 18: saveAllToDoListItemsTest
@@ -106,6 +112,25 @@ class ApplicationTest
         // assertTrue if testInnerHashMap<testItemTitle, ItemDetails.get(completionFlag)> equals testItemFlag
 
         // end markCompleteTest
+
+    // for now, the display tests will be a function call of some kind, but for part 2, i might take a different approach that tests the visuals on the fxml file instead of the existence of the HashMaps
+    // create a "displayExistingItemsTest" that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // function call displayExistingItems that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // assertTrue if the innerHashMap and outerHashMap you are trying to display exist and have item components completed within them
+
+        // end displayExistingItemsTest
+
+    // create a "displayIncompletedItemsTest" that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // function call displayIncompletedItems that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // assertTrue if the incompleted items of a to-do list are displayed with each of the components of the list being present as well
+
+        // end displayIncompletedItemsTest
+
+    // create a "displayCompletedItemsTest" that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // function call displayCompletedItems that takes in testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
+        // assertTrue if the completed items of a to-do list are displayed with each of the components of the list being present as well
+
+        // end displayCompletedItemsTest
 
     // create a "saveSingleToDoListItemsTest" that takes in the testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
         // function call saveSingleToDoListItems that takes in the testOuterHashMap, testInnerHashMap, testToDoListTitle, testItemTitle, testItemDate, and testItemDescription as its parameters
