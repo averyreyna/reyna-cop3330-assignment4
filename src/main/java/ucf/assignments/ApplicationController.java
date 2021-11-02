@@ -280,6 +280,11 @@ public class ApplicationController
 
         return innerMap;
     }
+
+    // the display, save, and load functionalities are present within the fxml files
+        // the three display functions that show all, incompleted, and completed items in a to-do list are found on YourToDoList section of the UI and as two seperate fxml files, respectively
+        // the save functions are found on the WelcomeScreen.fxml as a button that does not have functionality yet, as we need to add to-do lists into them
+        // the load functions are found on the WelcomeScreen.fxml as a button that does not have functionality yet, as we need to add to-do lists into them
     
     */
 
@@ -338,6 +343,13 @@ public class ApplicationController
     public void onDeleteItemClick(ActionEvent actionEvent)
     {
         welcomeText.setText("Delete item!");
+
+        // create a parent root variable that uses the .load() method to take the user to another fxml file
+        // create a new Scene scene(root)
+
+        // create a new stage variable that uses the .getSource().getScene().getWindow() to create a way for the user to see a visual cue
+        // use the .setStage() method to set up the scene
+        // use the .show() method to display the scene
     }
 
     public void onViewCompletedItemsClick(ActionEvent event) throws IOException
