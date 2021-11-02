@@ -293,6 +293,13 @@ public class ApplicationController
     protected void onHelloButtonClick()
     {
         welcomeText.setText("Hello!");
+
+        // create a parent root variable that uses the .load() method to take the user to another fxml file
+        // create a new Scene scene(root)
+
+        // create a new stage variable that uses the .getSource().getScene().getWindow() to create a way for the user to see a visual cue
+        // use the .setStage() method to set up the scene
+        // use the .show() method to display the scene
     }
 
     // this creates functionality to bring the user to the "welcome back!" screen
@@ -364,24 +371,53 @@ public class ApplicationController
         stage.show();
     }
 
+    // for these next four onActions commands, i don't know if they will be utilized for user functionality, but i want to present some type of idea as to what they might accomplish
     public void onSubmitItemClick(ActionEvent actionEvent)
     {
         welcomeText.setText("Submit to-do list item!");
+
+        // create a parent root variable that uses the .load() method to take the user to another fxml file
+        // create a new Scene scene(root)
+
+        // create a new stage variable that uses the .getSource().getScene().getWindow() to create a way for the user to see a visual cue
+        // use the .setStage() method to set up the scene
+        // use the .show() method to display the scene
     }
 
     public void onBackToListClick(ActionEvent actionEvent)
     {
         welcomeText.setText("Go back to to-list!");
+
+        // create a parent root variable that uses the .load() method to take the user to another fxml file
+        // create a new Scene scene(root)
+
+        // create a new stage variable that uses the .getSource().getScene().getWindow() to create a way for the user to see a visual cue
+        // use the .setStage() method to set up the scene
+        // use the .show() method to display the scene
     }
 
     public void onEditItemClick(ActionEvent actionEvent)
     {
         welcomeText.setText("Edit item!");
+
+        // create a parent root variable that uses the .load() method to take the user to another fxml file
+        // create a new Scene scene(root)
+
+        // create a new stage variable that uses the .getSource().getScene().getWindow() to create a way for the user to see a visual cue
+        // use the .setStage() method to set up the scene
+        // use the .show() method to display the scene
     }
 
     public void onBackToItemClick(ActionEvent actionEvent)
     {
         welcomeText.setText("Go back to item!");
+
+        // create a parent root variable that uses the .load() method to take the user to another fxml file
+        // create a new Scene scene(root)
+
+        // create a new stage variable that uses the .getSource().getScene().getWindow() to create a way for the user to see a visual cue
+        // use the .setStage() method to set up the scene
+        // use the .show() method to display the scene
     }
 
     // this creates functionality to bring the user to the "create item" screen
