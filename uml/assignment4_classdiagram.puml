@@ -5,11 +5,41 @@ class main
 {
     launch()
 }
+
 class Application
 {
     main : public static void
     start : public void
 }
+
+class itemDetails
+{
+    dueDate : String
+    itemDescription : String
+    completionFlag : String
+    getDueDate : public String
+    setDueDate : public void
+    getItemDescription : public String
+    setItemDescription : public void
+    getCompletionFlag : public Integer
+    setCompletionFlag : public void
+}
+
+class setDueDate
+{
+    this.dueDate : newDueDate
+}
+
+class setItemDescription
+{
+    this.itemDescription : newItemDescription
+}
+
+class setCompletionFlag
+{
+    this.completionFlag : changedCompletionFlag;
+}
+
 class ApplicationContoller
 {
     outerMap : HashMap<String, HashMap<String, Application.ItemDetails>>
@@ -162,5 +192,13 @@ editItemTitle -- ApplicationContoller : contains <
 editItemDueDate -- ApplicationContoller : contains <
 editItemDescription -- ApplicationContoller : contains <
 editItemCompletionStatus -- ApplicationContoller : contains <
+itemDetails -- setDueDate : contains >
+itemDetails -- setItemDescription : contains >
+itemDetails -- setCompletionFlag : contains >
+addItem -- itemDetails : adds itemDetails into >
+removeItem -- itemDetails : removes itemDetails from >
+editItemDueDate -- itemDetails : edits itemDetails in >
+editItemDescription -- itemDetails : edits itemDetails in >
+editItemCompletionStatus -- itemDetails : edits itemDetails in >
 
 @enduml
