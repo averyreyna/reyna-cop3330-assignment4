@@ -215,6 +215,71 @@ public class ApplicationController
 
         return outerMap;
     }
+
+    // create a function "editItemTitle" that takes in the oldItemTitle, newItemTitle, and innerMap HashMap
+        // initialize copyOfItems with the ItemComponents data type and have it use the .remove() method to get rid of the oldItemTitle
+        // use the .put() method to add the newItemTitle and copyOfItems into the innerMap HashMap
+
+        // return the updated innerMap HashMap
+    public static HashMap<String, ItemComponents> editItemTitle(String oldItemTitle, String newItemTitle, HashMap<String, ItemComponents> innerMap)
+    {
+        ItemComponents copyOfItems = innerMap.remove(oldItemTitle);
+        innerMap.put(newItemTitle, copyOfItems);
+
+        return innerMap;
+    }
+
+    // create a function "editItemDueDate" that takes in the innerMap HashMap, itemTitle, and itemDueDate
+        // initialize itemComponents with the ItemComponents data type
+
+        // use the .set() method to add the new itemDueDate to the itemComponents
+        // use the .put() method to add the itemTitle and itemComponents to the innerMap HashMap
+
+        // return the updated innerMap HashMap
+    public static HashMap<String, ItemComponents> editItemDueDate(HashMap<String, ItemComponents> innerMap, String itemTitle, String itemDueDate)
+    {
+        ItemComponents itemComponents = new ItemComponents();
+
+        itemComponents.setItemDueDate(itemDueDate);
+        innerMap.put(itemTitle, itemComponents);
+
+        return innerMap;
+    }
+
+    // create an "editItemDescription" function that takes in the innerMap HashMap, itemTitle, and itemDescription
+        // initialize itemComponents with the ItemComponents data type
+
+        // use the .set() method to add the new itemDescription to the itemComponents
+        // use the .put() method to add the itemTitle and itemComponents to the innerMap HashMap
+
+        // return the updated innerMap HashMap
+    public static HashMap<String, ItemComponents> editItemDescription(HashMap<String, ItemComponents> innerMap, String itemTitle, String itemDescription)
+    {
+
+        ItemComponents itemComponents = new ItemComponents();
+
+        itemComponents.setItemDescription(itemDescription);
+        innerMap.put(itemTitle, itemComponents);
+
+        return innerMap;
+    }
+
+    // create an "editItemDescription" function that takes in the innerMap HashMap, itemTitle, and itemCompletionStatus
+        // initialize itemComponents with the ItemComponents data type
+
+        // use the .set() method to add the new itemCompletionStatus to the itemComponents
+        // use the .put() method to add the itemTitle and itemComponents to the innerMap HashMap
+
+        // return the updated innerMap HashMap
+    public static HashMap<String, ItemComponents> editItemCompletionStatus(HashMap<String, ItemComponents> innerMap, String itemTitle, String itemCompletionStatus)
+    {
+        ItemComponents itemComponents = new ItemComponents();
+
+        itemComponents.setItemCompletionFlag(itemCompletionStatus);
+        innerMap.put(itemTitle, itemComponents);
+
+        return innerMap;
+    }
     
     */
 
@@ -268,14 +333,24 @@ public class ApplicationController
         welcomeText.setText("Delete item!");
     }
 
-    public void onViewCompletedItemsClick(ActionEvent actionEvent)
+    public void onViewCompletedItemsClick(ActionEvent event) throws IOException
     {
-        welcomeText.setText("Completed items!");
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CompletedItems.fxml")));
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
-    public void onViewUncompletedItemsClick(ActionEvent actionEvent)
+    public void onViewUncompletedItemsClick(ActionEvent event) throws IOException
     {
-        welcomeText.setText("Uncompleted items!");
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("UncompletedItems.fxml")));
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
 
     // this creates functionality to bring the user to the "your to-do list " screen
