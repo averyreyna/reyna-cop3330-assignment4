@@ -5,6 +5,30 @@ class main
 {
     launch()
 }
+class Application
+{
+    main : public static void
+    start : public void
+}
+class ApplicationContoller
+{
+    outerMap : HashMap<String, HashMap<String, Application.ItemDetails>>
+    innerMap : HashMap<String, Application.ItemDetails>
+    addToDoList : public static HashMap<String, HashMap<String, Application.ItemDetails>>
+    addItem : public static HashMap<String, Application.ItemDetails>
+    removeToDoList : public static HashMap<String, HashMap<String, Application.ItemDetails>>
+    removeItem : public static HashMap<String, Application.ItemDetails>
+    editItemDueDate : public static HashMap<String, Application.ItemDetails>
+    editItemDescription : public static HashMap<String, Application.ItemDetails>
+    editItemCompletionStatus : public static HashMap<String, Application.ItemDetails>
+    createCompletedItemsList : public ArrayList<ItemDetails>
+    createUncompletedItemsList : public ArrayList<ItemDetails>
+    editToDoListTitle : public static HashMap<String, HashMap<String, ItemDetails>>
+    editItemTitle : public static HashMap<String, ItemComponents>
+    editItemDueDate : public static HashMap<String, ItemComponents>
+    editItemDescription : public static HashMap<String, ItemComponents>
+    editItemCompletionStatus : public static HashMap<String, ItemComponents>
+}
 
 class start
 {
@@ -117,11 +141,26 @@ class editItemDescription
 class editItemCompletionStatus
 {
     itemComponents : ItemComponents
-     itemComponents.setItemCompletionFlag(itemCompletionStatus)
-     innerMap.put(itemTitle, itemComponents)
+    itemComponents.setItemCompletionFlag(itemCompletionStatus)
+    innerMap.put(itemTitle, itemComponents)
 }
 
 Application -- main : contains >
 Application -- start : contains >
+ApplicationContoller -- Application : extends >
+addToDoList -- ApplicationContoller : contains <
+addItem -- ApplicationContoller : contains <
+removeToDoList -- ApplicationContoller : contains <
+removeItem -- ApplicationContoller : contains <
+editItemDueDate -- ApplicationContoller : contains <
+editItemDescription -- ApplicationContoller : contains <
+editItemCompletionStatus -- ApplicationContoller : contains <
+createCompletedItemsList -- ApplicationContoller : contains <
+createUncompletedItemsList -- ApplicationContoller : contains <
+editToDoListTitle -- ApplicationContoller : contains <
+editItemTitle -- ApplicationContoller : contains <
+editItemDueDate -- ApplicationContoller : contains <
+editItemDescription -- ApplicationContoller : contains <
+editItemCompletionStatus -- ApplicationContoller : contains <
 
 @enduml
